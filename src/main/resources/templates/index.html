@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/navbar.html :: header( title = 'Empleados')}"></head>
+<body>
+<main>
+    <div class="container px-4 pb-5">
+
+        <nav th:replace="~{fragments/navbar.html :: navbar( active = 'Employee')}"></nav>
+        <h1 class="pb-2 border-bottom">Bienvenidos a MovieMaster</h1>
+        <a class="btn btn-primary mt-4 mb-4" th:href="@{'/pelicula'}">Películas</a>
+        <a class="btn btn-primary mt-4 mb-4" th:href="@{'/director'}">Directores</a>
+        <a class="btn btn-primary mt-4 mb-4" th:href="@{'/employee/new'}">Contacto</a>
+
+        <div th:if="${msg != null}" th:text="${msg}" class="alert alert-success" role="alert"></div>
+
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Fecha de inicio</th>
+                <th>Salario</th>
+                <th>Ciudad</th>
+                <th>Pais</th>
+                <th>Jefe</th>
+                <th></th>
+                <th></th>
+            </tr>
+            </thead>
+
+    </div>
+</main>
+<script th:replace="~{fragments/navbar.html :: footer-bootstrap}"></script>
+</body>
+</html>
